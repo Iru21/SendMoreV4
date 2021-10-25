@@ -21,12 +21,13 @@ export default function loadDiscordPassport(db: database) {
                         admins: id
                     })
                 } else {
-                    const admins = gCheck.dataValues.admins.split(',')
+                    const admins: string[] = gCheck.dataValues.admins.split(',')
+                    if(!admins.includes(id)) admins.push(id)
                     await Guild.update({
                         name: guild.name,
                         icon: guild.icon != null ? 'https://cdn.discordapp.com/icons/' + guild.id + '/' + guild.icon + '.png' : '',
                         owner: guild.owner ? id : null,
-                        admins: !admins.includes(id) ? admins.push(id).join(',') : admins.join(',')
+                        admins: admins.join(',')
                     }, {
                         where: {
                             id: guild.id
