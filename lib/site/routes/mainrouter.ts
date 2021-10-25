@@ -94,7 +94,7 @@ export default class MainRouter {
             await saveFilesToTemp(files, exts)
             const urls = await uploadToCatbox()
             clearTemp()
-            await this.client.send(serverId, channelId, urls)
+            await this.client.send((req.user as any).id, serverId, channelId, urls)
             return res.status(200).send()
         })
 
