@@ -62,14 +62,15 @@ export default class Server {
     private configureRoutes(db: database) {
         const main = new MainRouter(db)
         const auth = new AuthRouter()
+
+        this.app.use(cors({origin: "*", optionsSuccessStatus: 200}))
+        this.app.use(logger('dev'))
+
         this.app.use(express.json({ limit: "600mb" }))
         this.app.use(express.urlencoded({ extended: true }))
 
         this.app.use(main.router)
         this.app.use('/auth', auth.router)
-
-        this.app.use(cors({origin: "*", optionsSuccessStatus: 200}))
-        this.app.use(logger('dev'))
     }
 
     private configureView() {

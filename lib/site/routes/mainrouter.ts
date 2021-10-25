@@ -48,7 +48,7 @@ export default class MainRouter {
                 const a = await getUserAvatar(this.client, u.id)
                 const [channels, server] = await this.getChannels(serverId)
                 if(channels === null) {
-                    res.redirect('https://discord.com/api/oauth2/authorize?client_id=891759834268074065&permissions=0&redirect_uri=http%3A%2F%2F127.0.0.1%3A3000%2Fauth%2Fredirect&scope=bot')
+                    return res.redirect('https://discord.com/api/oauth2/authorize?client_id=891759834268074065&permissions=0&redirect_uri=http%3A%2F%2F127.0.0.1%3A3000%2Fauth%2Fredirect&scope=bot')
                 }
                 return res.render('channelselect', {
                     auth: true,
@@ -136,7 +136,7 @@ export default class MainRouter {
             }
             return [c, {id: g.id, name: g.name, icon: g.icon != null ? 'https://cdn.discordapp.com/icons/' + g.id + '/' + g.icon + '.png' : `https://avatars.dicebear.com/api/identicon/${g.id}.svg`}]
         } catch(err) {
-            return null
+            return [null, null]
         }
     }
 
