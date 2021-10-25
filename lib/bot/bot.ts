@@ -15,7 +15,7 @@ export default class Bot extends Client {
     async send(authorId: string, serverId: string, channelId: string, urls: string[]) {
         const channel = this.guilds.cache.get(serverId)!.channels.cache.get(channelId) as TextChannel
         if(!channel) return
-        const images: [ string[],  string[], string[], string[], string[]] = [[], [], [], [], []]
+        const images: [ string[],  string[], string[], string[], string[], string[], string[],  string[], string[], string[]] = [[], [], [], [], [], [], [], [], [], []]
         let w = 0
         for(let i = 0; i < urls.length; i++) {
             if(images[w].length == 5) w++
@@ -35,6 +35,6 @@ export default class Bot extends Client {
                 }, 500)
             }
         }
-        console.log(` ❯ Successfully sent ${urls.length} files!`)
+        console.log(` ❯ Successfully sent to #${channel.name}!`)
     }
 }
