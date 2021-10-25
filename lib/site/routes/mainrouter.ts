@@ -70,10 +70,10 @@ export default class MainRouter {
                 const u = (req.user as any).dataValues
                 const a = await getUserAvatar(this.client, u.id)
                 const [channels, server] = await this.getChannels(serverId)
-                const channel = channels.filter((c: TextChannel) => c.id === channelId)[0]
                 if(channels === null || server === null) {
                     return res.redirect('https://discord.com/api/oauth2/authorize?client_id=891759834268074065&permissions=0&redirect_uri=http%3A%2F%2F127.0.0.1%3A3000%2Fauth%2Fredirect&scope=bot')
                 }
+                const channel = channels.filter((c: TextChannel) => c.id === channelId)[0]
                 return res.render('fileselect', {
                     auth: true,
                     id: u.id,
