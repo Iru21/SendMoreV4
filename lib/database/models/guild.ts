@@ -13,15 +13,6 @@ export default function Guild(sequelize: Sequelize): any {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        icon: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        owner: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            defaultValue: null,
-        },
         admins: {
             type: DataTypes.TEXT,
             allowNull: false,

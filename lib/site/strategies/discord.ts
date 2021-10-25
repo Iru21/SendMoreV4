@@ -16,8 +16,6 @@ export default function loadDiscordPassport(db: database) {
                     await Guild.create({
                         id: guild.id,
                         name: guild.name,
-                        icon: guild.icon != null ? 'https://cdn.discordapp.com/icons/' + guild.id + '/' + guild.icon + '.png' : '',
-                        owner: guild.owner ? id : null,
                         admins: id
                     })
                 } else {
@@ -25,8 +23,6 @@ export default function loadDiscordPassport(db: database) {
                     if(!admins.includes(id)) admins.push(id)
                     await Guild.update({
                         name: guild.name,
-                        icon: guild.icon != null ? 'https://cdn.discordapp.com/icons/' + guild.id + '/' + guild.icon + '.png' : '',
-                        owner: guild.owner ? id : null,
                         admins: admins.join(',')
                     }, {
                         where: {
