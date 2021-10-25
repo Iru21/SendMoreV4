@@ -7,7 +7,7 @@ export default class MainRouter {
         this.router = express.Router()
         this.router.get('/', passport.authenticate('discord'))
 
-        this.router.get('/redirect', passport.authenticate('discord', { failureRedirect: '/auth/forbidden', successRedirect: '/app' }), (err: Error, req: Request, res: Response) => {
+        this.router.get('/redirect', passport.authenticate('discord', { failureRedirect: '/', successRedirect: '/app' }), (err: Error, req: Request, res: Response) => {
             if(err.name == "TokenError") {
                 res.redirect('/auth/forbidden')
             }
@@ -20,14 +20,6 @@ export default class MainRouter {
             } else {
                 res.redirect('/')
             }
-        })
-
-        this.router.get('/forbidden', (req: Request, res: Response) => {
-            return res.status(401).json({
-                msg: "Forbidden",
-                type: "Auth",
-                status: 401
-            })
         })
     }
 }
