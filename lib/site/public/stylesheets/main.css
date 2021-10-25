@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+*:focus:not(:focus-visible) {
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+body {
+    margin: 0;
+    padding: 0px;
+    font-family: 'Share Tech Mono', monospace;
+    background-color: #282c34;
+    overflow: hidden;
+    user-select: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.header {
+    background-color: #363a44;
+    max-height: 8vh;
+    min-height: 8vh;
+    display: flex;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    width: 100%;
+}
+
+#nav-username, #nav-server, #nav-channel {
+    margin-left: 10px;
+    max-width: 15vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#avatar, #nav-serverIcon {
+    width: 6vh;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+#lob {
+    background-color: #FE7491;
+    color: white;
+    border-color: #FE7491;
+    position: absolute;
+    right: 100px;
+    font-family: 'Share Tech Mono', monospace;
+    margin-right: 10px;
+}
+
+#homebutton {
+    background-color: #FE7491;
+    color: white;
+    border-color: #FE7491;
+    position: absolute;
+    right: 10px;
+    font-family: 'Share Tech Mono', monospace;
+    margin-right: 10px;
+}
+
+#lib {
+    background-color: #FE7491;
+    color: white;
+    border-color: #FE7491;
+    margin-top: 70px;
+    width: 350px;
+    height: 60px;
+    font-size: calc(10px + 2vmin);
+    font-family: 'Share Tech Mono', monospace;
+}
+
+#hl {
+    width: 6vh;
+    margin-left: 10px;
+}
+
+.container {
+    text-align: center;
+    background-color: #282c34;
+    color: white;
+    min-height: 92vh;
+    width: 100%;
+    height: 100%;
+    font-family: 'Share Tech Mono', monospace;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+}
+
+#guildSelectWrapper {
+    margin-top: 35px;
+}
+
+#guildSelect {
+    background-color: #282c34;
+    border-color: #FE7491;
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    min-width: 400px;
+    text-align: center;
+}
+
+#serverIcon {
+    width: 4vh;
+    height: 4vh;
+    float: left;
+    margin-right: 15px;
+    border-radius: 10px;
+    border: 2px solid #FE7491;
+}
+
+#channelSelectWrapper {
+    margin-top: 35px;
+}
+
+#channelSelect {
+    background-color: #282c34;
+    border-color: #FE7491;
+    color: white;
+    min-width: 400px;
+    text-align: center;
+}
+
+.file {
+    margin-top: 35px;
+}
+
+.file-cta {
+    cursor: pointer;
+    border-radius: 30px !important;
+    border: 2px solid #FE7491 !important;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff !important;
+    border-width: 0px;
+    background-color: transparent !important;
+}
+
+.file-cta::hover {
+    cursor: pointer;
+    border-radius: 30px !important;
+    border: 2px solid #9e6471 !important;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff !important;
+    border-width: 0px;
+    background-color: transparent !important;
+}

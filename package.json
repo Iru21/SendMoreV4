@@ -1,0 +1,42 @@
+{
+  "name": "sendmorev4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "clear-dist": "rmdir /s /q dist",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "dev": "nodemon ./lib/index.ts"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/express-session": "^1.17.4",
+    "@types/fs-extra": "^9.0.13",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^16.7.6",
+    "@types/passport-discord": "^0.1.5",
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.13",
+    "typescript": "^4.3.5"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "catbox.moe": "^1.0.2",
+    "connect-mysql": "^4.0.0",
+    "cors": "^2.8.5",
+    "discord.js": "^13.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "fs-extra": "^10.0.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.1",
+    "passport": "^0.5.0",
+    "passport-discord": "^0.1.4",
+    "sequelize": "^6.7.0"
+  }
+}
