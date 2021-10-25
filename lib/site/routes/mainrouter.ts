@@ -94,11 +94,15 @@ export default class MainRouter {
             const files = req.body.files
             const exts = req.body.exts
             if(!files || !exts) return res.status(401)
+            const user = (req.user as any)
             console.log(` ❯ Recieved ${files.length} files! Working...`)
+            console.log(` ❯ Sent by: ${user.username}`)
+            console.log(" ")
             await saveFilesToTemp(files, exts)
             const urls = await uploadToCatbox()
             clearTemp()
-            await this.client.send((req.user as any).id, serverId, channelId, urls)
+            await this.client.send(user.id, serverId, channelId, urls)
+            console.log(" ")
             return res.status(200).send()
         })
 
