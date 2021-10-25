@@ -95,6 +95,7 @@ export default class MainRouter {
             const exts = req.body.exts
             if(!files || !exts) return res.status(401)
             const user = (req.user as any)
+            console.log(" ")
             console.log(` ❯ Recieved ${files.length} files! Working...`)
             console.log(` ❯ Sent by: ${user.username}`)
             console.log(" ")
