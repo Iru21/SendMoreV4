@@ -39,6 +39,7 @@
     "mysql2": "^2.3.1",
     "passport": "^0.5.0",
     "passport-discord": "^0.1.4",
-    "sequelize": "^6.7.0"
+    "sequelize": "^6.7.0",
+    "node": "^16.6.0"
   }
 }
